@@ -10,8 +10,8 @@ class delivery_order(models.Model):
 
     def cron_action(self, cr, uid, ids=None, context=None):
         picking_obj = self.pool.get('stock.picking')
-        waiting_pickings_id = picking_obj.search(cr, uid, [('state','=','confirmed')])
-        ready_pickings_id = picking_obj.search(cr, uid, [('state','=','assigned')])
+        waiting_pickings_id = picking_obj.search(cr, uid, [('picking_type_id', '=', 6), ('state','=','confirmed')])
+        ready_pickings_id = picking_obj.search(cr, uid, [('picking_type_id', '=', 6), ('state','=','assigned')])
 
         # Check availability for waiting pickings
         if waiting_pickings_id:

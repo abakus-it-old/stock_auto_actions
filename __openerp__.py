@@ -12,5 +12,5 @@ This modules adds auto actions for managing Delivery Orders
     - it checks availability for pickings that are waiting
     - it prints the ready pickings and set them as printed
     """,
-    'data': ['delivery_order_cron.xml',],
+    'data': ['delivery_order_cron.xml', 'view/stock_picking_view.xml',],
 }
